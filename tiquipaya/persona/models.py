@@ -4,7 +4,7 @@ from datetime import datetime
 
 class Sexo(models.Model):
     nombre = models.CharField(max_length=255, primary_key=True)
-    orden = models.IntergerField()
+    orden = models.IntegerField()
 
     def __str__(self):
         return self.nombre
@@ -12,7 +12,7 @@ class Sexo(models.Model):
 
 class EstadoCivil(models.Model):
     nombre = models.CharField(max_length=255, primary_key=True)
-    orden = models.IntergerField()
+    orden = models.IntegerField()
 
     def __str__(self):
         return self.nombre
