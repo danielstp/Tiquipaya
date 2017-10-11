@@ -23,8 +23,11 @@ class Persona(models.Model):
     apellidoPaterno = models.CharField(max_length=255)
     apellidoMaterno = models.CharField(max_length=255)
     fechaNacimiento = models.DateField()
+    sexo = models.ForeignKey(Sexo, default="Femenino", on_delete=models.PROTECT)
+    estadoCivil = models.ForeignKey(EstadoCivil, default='Soltero', on_delete=models.PROTECT)
+
 
     def edad(self):
-        return datetime.now() - self.fechaNacimiento
+        return datetime.date(datetime.today()) - self.fechaNacimiento
 
 
